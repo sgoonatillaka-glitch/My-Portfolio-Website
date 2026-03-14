@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Blog page</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/bbbea913d1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/Logo.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <h1>Welcome to <span>My Blog</span> Page!</h1>
+          <p class="just-p">
+            Hi there! This is my corner of the internet to share thoughts,
+            experiences, and ideas. I love exploring new topics and writing
+            about what inspires me. I’m not an expert, just someone who enjoys
+            sharing stories. I hope you find something here that sparks your
+            curiosity!
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-----------------------blog-------------------->
+    <div id="blog">
+      <div class="container">
+        <h2 class="sub-title">My Blogs</h2>
+        <div class="blog-list">
+          <div>
+            <i class="fa-brands fa-medium"></i>
+            <h2>Animation in Multimedia</h2>
+            <p>article description here</p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-newspaper"></i>
+            <h2>Upcoming</h2>
+            <p>article description here</p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-newspaper"></i>
+            <h2>Upcoming</h2>
+            <p>article description here</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>
+        Copyright &copy Sinali. Made with <i class="fa-solid fa-heart"></i> by
+        Sinali Goonatillaka
+      </p>
+    </div>
+
+    <button id="topBtn" onclick="scrollToTop()">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
