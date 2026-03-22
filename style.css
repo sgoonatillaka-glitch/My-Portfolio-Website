@@ -347,9 +347,11 @@ nav .fa-solid {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 480px) and (max-width: 767px) {
   #header {
     background-image: url(Images/Phone_background.png);
+    background-size: auto;
+    background-repeat: no-repeat;
   }
 
   .header-text {
