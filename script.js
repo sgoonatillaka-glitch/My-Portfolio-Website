@@ -1,3 +1,5 @@
+/*-----------------tabs----------------- */
+
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 
@@ -93,3 +95,14 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
+
+// Loader
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+  loader.style.opacity = "0";
+  loader.style.transition = "0.5s";
+
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 500);
+});
