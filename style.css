@@ -14,6 +14,7 @@ html {
   scroll-behavior: smooth;
   max-width: 100%;
 }
+
 body {
   min-height: 100%;
   background: linear-gradient(135deg, #2a2a2a, #2a2a2a);
@@ -172,13 +173,6 @@ nav ul li a:hover::after {
   cursor: pointer;
   position: relative;
   white-space: nowrap;
-}
-
-  margin-right: 50px;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  position: relative;
 }
 
 .tab-links::after {
