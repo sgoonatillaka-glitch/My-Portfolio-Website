@@ -37,40 +37,53 @@ document.addEventListener("DOMContentLoaded", function () {
   const confirmation = document.getElementById("confirmation-message");
 
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbwnXTXLzVCW9nkLmwJ40zy0XT2PTnVFWJQGqEtkIwrOXbHpH1EB4_H5tgf3OYenS0w/exec"; // e.g. API endpoint
+    "https://script.google.com/macros/s/AKfycbwhrQa8FBtsEEzbZVgZp26cK9ZuEGctOR30vWTgWeYoezV2gtO1hZtp0UAOqvsKAQ/exec";
 
   if (form && confirmation) {
-    form.addEventListener("submit", function (e) {
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
       const formData = new FormData(form);
 
-      fetch(scriptURL, {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
+      confirmation.textContent = "Sending...";
+      confirmation.style.display = "block";
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
 
-          confirmation.textContent =
-            "Thank you! Your message has been received.";
-          confirmation.style.display = "block";
-
-          form.reset();
-
-          setTimeout(() => {
-            confirmation.style.display = "none";
-          }, 5000);
-        })
-        .catch((error) => {
-          confirmation.textContent =
-            "Sorry, something went wrong. Please try again.";
-          confirmation.style.display = "block";
-
-          console.error("Form submission error:", error);
+      try {
+        const params = new URLSearchParams();
+        formData.forEach((value, key) => {
+          params.append(key, value);
         });
+
+        const response = await fetch(scriptURL, {
+          method: "POST",
+          body: params,
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`HTTP ${response.status}: ${errorText}`);
+        }
+
+        confirmation.textContent = "Thank you! Your message has been received.";
+        form.reset();
+
+        setTimeout(() => {
+          confirmation.style.display = "none";
+        }, 5000);
+      } catch (error) {
+        confirmation.textContent =
+          "Sorry, something went wrong. Please try again.";
+        console.error("Form submission error:", error);
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+      }
     });
   }
 });
