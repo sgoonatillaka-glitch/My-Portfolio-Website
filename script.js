@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const confirmation = document.getElementById("confirmation-message");
 
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbyZxfVHXquf8iAQUmZepJVB6A0deiZ-nLiCQf-KuhCnAYmAU-tFBau-mIZDdSeD-is/exec"; // e.g. API endpoint
+    "https://script.google.com/macros/s/AKfycbwnXTXLzVCW9nkLmwJ40zy0XT2PTnVFWJQGqEtkIwrOXbHpH1EB4_H5tgf3OYenS0w/exec"; // e.g. API endpoint
 
   if (form && confirmation) {
     form.addEventListener("submit", function (e) {
