@@ -88,11 +88,162 @@
         </div>
       </div>
     </div>
-    <div class="copyright">
-      <p>
-        Copyright &copy Sinali. Made with <i class="fa-solid fa-heart"></i> by
-        Sinali Goonatillaka
-      </p>
+    <!---------- footer -------->
+      <div class="copyright">
+        <p>
+          Copyright &copy; 2026 Sinali. Made with
+          <i class="fa-solid fa-heart"></i> by Sinali Goonatillaka
+        </p>
+        <p class="footer-links">
+          <button onclick="openModal('privacy')">Privacy Policy</button>
+          <button onclick="openModal('terms')">Terms &amp; Conditions</button>
+        </p>
+      </div>
+
+      <!-- Privacy Policy Modal -->
+      <div
+        class="modal-overlay"
+        id="modal-privacy"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="modal">
+          <div class="modal-header">
+            <div class="modal-header-left">
+              <span class="modal-tag">Legal</span>
+              <h2>Privacy Policy</h2>
+            </div>
+            <button
+              class="modal-close"
+              onclick="closeModal('privacy')"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="modal-section">
+              <h3>Contact Form Data</h3>
+              <p>
+                When you use the contact form, I collect your name, email, and
+                message — nothing more.
+              </p>
+              <div class="callout">
+                This information is used only to respond to your inquiry. It is
+                never sold, shared, or used for marketing.
+              </div>
+            </div>
+
+            <div class="modal-section">
+              <h3>Data Handling</h3>
+              <p>
+                Your details are kept only as long as needed to reply to you.
+                They are not stored in any third-party CRM or mailing list.
+              </p>
+            </div>
+
+            <div class="modal-section">
+              <h3>Cookies &amp; Analytics</h3>
+              <p>
+                This site may use basic, anonymous analytics to track page
+                visits. No personal data is collected, and no advertising
+                cookies are used.
+              </p>
+            </div>
+
+            <div class="modal-section">
+              <h3>Your Rights</h3>
+              <p>
+                You can request deletion of any data you've submitted via the
+                contact form at any time — just send me a message.
+              </p>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <span class="modal-date">Last updated — April 2026</span>
+            <button class="btn-confirm" onclick="closeModal('privacy')">
+              Got it
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terms & Conditions Modal -->
+      <div
+        class="modal-overlay"
+        id="modal-terms"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="modal">
+          <div class="modal-header">
+            <div class="modal-header-left">
+              <span class="modal-tag">Legal</span>
+              <h2>Terms &amp; Conditions</h2>
+            </div>
+            <button
+              class="modal-close"
+              onclick="closeModal('terms')"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="modal-section">
+              <h3>Copyright</h3>
+              <p>
+                All creative work on this site — photography, design,
+                illustrations, and written content — is owned by me and
+                protected by copyright law.
+              </p>
+              <div class="callout">
+                None of the work shown here may be copied, reproduced,
+                downloaded, or republished without my written permission.
+              </div>
+            </div>
+
+            <div class="modal-section">
+              <h3>Permitted Use</h3>
+              <p>
+                You may share links to this site and reference the work for
+                commentary or critique, with proper credit. For licensing or
+                collaboration, please get in touch via the contact form.
+              </p>
+            </div>
+
+            <div class="modal-section">
+              <h3>Disclaimer</h3>
+              <p>
+                Content on this site is provided for portfolio purposes only.
+                While I keep it accurate, no guarantees are made regarding
+                completeness or fitness for a specific purpose.
+              </p>
+            </div>
+
+            <div class="modal-section">
+              <h3>Changes</h3>
+              <p>
+                These terms may be updated occasionally. Continued use of the
+                site means you accept any revised terms.
+              </p>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <span class="modal-date">Last updated — April 2026</span>
+            <button class="btn-confirm" onclick="closeModal('terms')">
+              Agree
+            </button>
+            <button class="btn-confirm" onclick="declineTerms()">
+              Disagree
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <button id="topBtn" onclick="scrollToTop()">

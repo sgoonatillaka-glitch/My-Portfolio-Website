@@ -356,6 +356,26 @@ nav ul li a:hover::after {
   font-size: 25px;
 }
 
+/* agreement checkbox styling and layout */
+.contact-right form input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: violet;
+  margin: 0;
+}
+
+.contact-right form label[for="agree-privacy"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e8e8e8;
+  font-size: 0.95rem;
+}
+
+.contact-right form input[type="checkbox"] + label {
+  cursor: pointer;
+}
+
 .social-icons {
   margin-top: 30px;
 }
@@ -415,10 +435,15 @@ form btn2 {
 .copyright {
   width: 100%;
   text-align: center;
-  padding: 25px;
+  padding: 25px 40px 25px 25px;
   background: #3c3c3c;
   font-weight: 300;
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .copyright i {
@@ -1169,4 +1194,205 @@ body.author-page .icon-link:hover {
   font-size: 18px;
   margin-top: 20px;
   cursor: pointer;
+}
+
+/* -----------privacy policy & terms and conditions specific styles------------ */
+
+/* ── Footer ── */
+.footer-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.copyright .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0.75rem;
+  margin-right: 5rem;
+}
+
+.copyright .footer-links button {
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.footer-links button:hover {
+  background: violet;
+  border-color: violet;
+  color: white;
+}
+
+/* ── Overlay ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Modal box ── */
+.modal {
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  overflow-y: auto;
+  transform: translateY(16px);
+  transition: transform 0.3s ease;
+}
+.modal-overlay.open .modal {
+  transform: translateY(0);
+}
+
+.modal-header {
+  background: #2a2a2a;
+  color: white;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+  position: sticky;
+  top: 0;
+}
+.modal-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.modal-tag {
+  font-size: 0.65rem;
+  background: violet;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.modal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modal-close {
+  background: none;
+  border: 1px solid #555;
+  color: #aaa;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.modal-close:hover {
+  border-color: white;
+  color: white;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-section {
+  margin-bottom: 1.4rem;
+}
+.modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.modal-section h3 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: violet;
+  margin-bottom: 0.5rem;
+}
+
+.modal-section p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+.callout {
+  background: #f3eeff;
+  border-left: 3px solid violet;
+  padding: 0.75rem 1rem;
+  border-radius: 0 4px 4px 0;
+  margin: 0.75rem 0;
+  font-size: 0.85rem;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+}
+.modal-date {
+  font-size: 0.72rem;
+  color: #aaa;
+  justify-content: space-between;
+}
+.btn-confirm {
+  background: violet;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-confirm:hover {
+  background: #5a00cc;
+}
+/* keep footer items in one line on phone/tablet sizes */
+@media only screen and (max-width: 1024px) {
+  .copyright {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .copyright .footer-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.5rem;
+  }
+  .copyright .footer-links button {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.85rem;
+  }
 }
