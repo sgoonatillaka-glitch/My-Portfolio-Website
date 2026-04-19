@@ -882,12 +882,15 @@ body.author-page {
 }
 
 .bio {
-  max-width: 55ch;
+  max-width: 45ch;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.8;
   margin-bottom: 44px;
   animation: rise 1s 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
 /* ── social/contact links ── */
